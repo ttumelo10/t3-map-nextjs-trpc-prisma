@@ -73,3 +73,14 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
+
+// NEW: Location model for your map portfolio feature
+model Location {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  latitude    Float
+  longitude   Float
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
